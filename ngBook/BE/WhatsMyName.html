@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>What's my name?  Say it....</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js"></script>
+</head>
+<body>
+    <div ng-controller="WhatsMyNameController">
+        <p>....Now say my name....</p>
+        <h1>{{ person }}</h1>
+        ....say it again:
+        <h2>{{ person.name }}</h2>
+        ...your damn right!!!
+    </div>
+
+    <script type="text/javascript" src="WhatsMyNameController.js"></script>
+</body>
+</html>
