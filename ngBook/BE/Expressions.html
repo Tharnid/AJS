@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Expressions</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js"></script>
+</head>
+<body>
+
+    <div ng-controller="ExpressionController">
+        <input ng-model="expr" type="text" placeholder="Enter an expression!!!" />
+        <h2>{{ parsedValue }}</h2>
+    </div>
+
+    <script type="text/javascript" src="Expressions.js"></script>
+
+</body>
+</html>
