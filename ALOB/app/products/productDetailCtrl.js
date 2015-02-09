@@ -1,6 +1,3 @@
-/**
- * Created by Deb on 8/26/2014.
- */
 (function () {
     "use strict";
 
@@ -8,7 +5,7 @@
         .module("productManagement")
         .controller("ProductDetailCtrl",
                     ["product",
-                     ProductDetailCtrl]);
+                     ProductDetailCtrl]); // registration adding product to min safe array
 
     function ProductDetailCtrl(product) {
         var vm = this;

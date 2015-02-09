@@ -1,6 +1,3 @@
-/**
- * Created by Deb on 8/20/2014.
- */
 (function () {
     "use strict";
     var app = angular.module("productManagement",
@@ -56,7 +53,7 @@
                         templateUrl: "app/products/productDetailView.html",
                         controller: "ProductDetailCtrl as vm",
                         resolve: {
-                            productResource: "productResource",
+                            productResource: "productResource",  // dependencies function that gets product
 
                             product: function (productResource, $stateParams) {
                                 var productId = $stateParams.productId;
