@@ -27,6 +27,10 @@ angular.module('Tharnly', [
 
         function setCurrentCategory(category) {
             $scope.currentCategory = category;
+
+            // cancel create and cancel editing
+            cancelCreating();
+            cancelEditing();
         }
 
         function isCurrentCategory(category) {

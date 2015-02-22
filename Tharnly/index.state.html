@@ -34,19 +34,19 @@
         <hr/>
         <!-- CREATING -->
         <div ng-if="shouldShowCreating()">
-          <button type="button" class="btn btn-link" ng-click="startCreating()">
+          <button type="button" class="btn btn-link" ng-click="startCreating();">
             <span class="glyphicon glyphicon-plus"></span>
             Create Bookmark
           </button>
           <div ng-if="isCreating">
             Create a bookmark!
-            <button type="button" class="btn btn-default btn-lg pull-right" ng-click="cancelCreating()">Cancel</button>
+            <button type="button" class="btn btn-default btn-lg pull-right" ng-click="cancelCreating();">Cancel</button>
           </div>
         </div>
         <!-- EDITING -->
         <div ng-if="shouldShowEditing()">
           Editing a bookmark!
-          <button type="button" class="btn btn-default btn-lg pull-right" ng-click="cancelEditing()">Cancel</button>
+          <button type="button" class="btn btn-default btn-lg pull-right" ng-click="cancelEditing();">Cancel</button>
         </div>
       </div>
     </div>
