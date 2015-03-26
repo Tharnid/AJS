@@ -4,6 +4,7 @@
         ["common.services",
             "ui.router",
             "ui.mask",
+            "ui.bootstrap",
             "productResourceMock"]);
 
     app.config(["$stateProvider",
@@ -54,7 +55,7 @@
                         templateUrl: "app/products/productDetailView.html",
                         controller: "ProductDetailCtrl as vm",
                         resolve: {
-                            productResource: "productResource",  // dependencies function that gets product
+                            productResource: "productResource",
 
                             product: function (productResource, $stateParams) {
                                 var productId = $stateParams.productId;
