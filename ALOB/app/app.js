@@ -7,7 +7,7 @@
             "ui.bootstrap",
             "productResourceMock"]);
 
-    app.config(["$stateProvider",
+   app.config(["$stateProvider",
             "$urlRouterProvider",
             function ($stateProvider, $urlRouterProvider) {
                 $urlRouterProvider.otherwise("/");

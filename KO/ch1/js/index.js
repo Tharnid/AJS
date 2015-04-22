@@ -15,7 +15,7 @@ var myViewModel = {
 	categories: ko.observableArray([])
 };
 
-$.getJSON("products.json", function(data) {
+$.getJSON("product.json", function(data) {
 	myViewModel.categories(data.categories);
 });
 
