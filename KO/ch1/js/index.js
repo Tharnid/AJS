@@ -12,11 +12,50 @@
 // };
 
 var myViewModel = {
-	categories: ko.observableArray([])
+    allCategories: ko.observableArray([]),
+    selectedProduct: ko.observable(),
+    selectedCategory: ko.observable(),
+    selectedName: ko.observable(''),
+    shouldShow: function(item) {
+        return new RegExp(myViewModel.selectedName(), "gi").test(item.title);
+    },
+    selectProduct: function(product) {
+        myViewModel.selectedProduct.current = product;
+    },
+    showProduct: function(product) {
+        myViewModel.selectedProduct.current = myViewModel.selectedProduct();
+        myViewModel.selectedProduct(product);
+    },
+    hideProduct: function() {
+        myViewModel.selectedProduct(myViewModel.selectedProduct.current);
+    },
 };
 
-$.getJSON("product.json", function(data) {
-	myViewModel.categories(data.categories);
+myViewModel.categories = ko.computed(function() {
+    var results = myViewModel.allCategories(),
+            filterByCategory = myViewModel.selectedCategory();
+    if (filterByCategory) {
+        results = ko.utils.arrayFilter(results, function(category) {
+			return category.name === filterByCategory;
+		});
+    }
+    return results;
 });
+myViewModel.categoryName = ko.computed(function() {
+    var results = ko.utils.arrayMap(myViewModel.allCategories(), function(category) {
+        return category.name;
+    });
+    return results;
+});
+
+$.getJSON('product.json', function(data) {
+    myViewModel.allCategories(data.categories);
+});
+
+// $.getJSON("product.json", function(data) {
+// 	myViewModel.categories(data.categories);
+// });
+
+
 
 ko.applyBindings(myViewModel);
