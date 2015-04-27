@@ -6,7 +6,7 @@ gulp.task('default', function() {
 		script: 'app.js',
 		ext: 'js',
 		env: {
-			PORT: 1974
+			PORT: 1113
 		},
 		ignore: ['./node_modules/8**']
 	})
