@@ -21,7 +21,16 @@ bookRouter.route('/Books')
     .get(function(req, res) {
         // var responseJson = { hello: "This is my API bitch!!!"};
 
-        Book.find(function(err, books){
+        // Adding a query in here
+        var query = req.query;
+
+        //var query = {};
+        //
+        //if(req.query.genre) {
+        //    query.genre = req.query.genre;
+        //}
+
+        Book.find(query, function(err, books){
             if(err)
                 // console.log(err)
                 res.status(500).send(err);
