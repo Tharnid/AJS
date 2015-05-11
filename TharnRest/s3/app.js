@@ -27,8 +27,11 @@ bookRouter.route('/Books')
     .post(function(req, res) {
         var book = new Book(req.body);
 
-        console.log(book);
-        res.send(book);
+        book.save();
+        res.status(201).send(book);
+
+        //console.log(book);
+        //res.send(book);
     })
     .get(function(req, res) {
 
