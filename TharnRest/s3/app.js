@@ -21,9 +21,9 @@ app.use(bodyParser.json());
 
 // Routes
 
-bookRouter = require('./Routes/bookRoutes')(); // () executes that code
+bookRouter = require('./Routes/bookRoutes')(Book); // () executes that code
 
-
+// basically now I am injecting the book
 
 app.use('/api', bookRouter);
 
