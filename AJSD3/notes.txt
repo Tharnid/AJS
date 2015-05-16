@@ -1,0 +1,27 @@
+Selections:
+    .select(selector|node)
+    .selectAll(selector|nodes)
+    .filter(selector)
+    .sort(comparator)
+Content modification:
+    .attr(name[, value])
+    .style(name[, value[, priority]])
+    .property(name[, value])
+    .text([value])
+    .append(name)
+    .insert(name[, before])
+    .remove()
+Data binding:
+    .data([values[, key]])
+    .enter()
+    .exit()
+Animation and interaction:
+    .on(type[, listener[, capture]])
+    .transition()
+Flow control:
+    .each(function)
+    .call(function[, arguments…])
+
+CSS selectors
+
+http://www.w3schools.com/cssref/css_selectors.asp
