@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AJS D3 - Log Names</title>
+
+    <!--styles-->
+
+    <!--scripts-->
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/d3.min.js"></script>
+    <script src="libs/angular.min.js"></script>
+
+</head>
+<body>
+    <script type="text/javascript">
+        // Generate a range from 0 to 5
+        console.log(d3.range(5));
+        // [0, 1, 2, 3, 4]
+
+        // Generate a range from 10 to 20 with a step of 2
+        console.log(d3.range(10, 20, 2));
+        // [10, 12, 14, 16, 18]
+
+        // Generate a range from 10 to 0
+        console.log(d3.range(10, 0, -1));
+        // [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+        var keys = [1, 2, 3, 4, 5];
+        var values = [124, 643, 321, 346, 163];
+        var colors = ["red", "blue", "green", "purple", "pink"];
+
+        // Zip the Values
+        console.log(d3.zip(keys, values, colors));
+        // [[1,124,"red"], [2,643,"blue"], [3,321,"green"],
+        //  [4,346,"purple"], [5,163,"pink"]]
+
+        var values = [124, 643, 321, 346, 163, 239];
+
+        // Group the values in pairs of 2
+        console.log(d3.pairs(values));
+        // [[124,643], [643,321], [321,346], [346,163], [163,239]]
+
+        var values = {
+            name: "Peter", age: 25, gender: "male", eyes: "brown"
+        };
+
+        // Extract the Keys
+        console.log(d3.keys(values));
+        // ["name", "age", "gender", "eyes"]
+
+        var values = {
+            name: "Peter", age: 25, gender: "male", eyes: "brown"
+        };
+
+        // Extract the Values
+        console.log(d3.values(values));
+        // ["Peter", 25, "male", "brown"]
+
+        var values = {
+            name: "Peter", age: 25, gender: "male", eyes: "brown"
+        };
+
+        // Extract the Entries
+        console.log(d3.entries(values));
+        // [{key:"name", value:"Peter"},
+        //  {key:"age", value:25},
+        //  {key:"gender", value:"male"},
+        //  {key:"eyes", value:"brown"}]
+    </script>
+</body>
+</html>
