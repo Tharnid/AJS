@@ -25,3 +25,20 @@ Flow control:
 CSS selectors
 
 http://www.w3schools.com/cssref/css_selectors.asp
+
+Types of formatting
+-------------------
+
+e: Exponent
+g: General
+f: Fixed
+d: Integer
+r: Rounded to precision if specified
+%: Percentage
+p: Percentage rounded to precision if specified
+b: Binary
+o: Octal
+x: Hexadecimal
+X: Hexadecimal with uppercase letters
+c: Unicode character
+s: SI-suffixed and rounded

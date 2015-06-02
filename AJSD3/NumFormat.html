@@ -21,6 +21,43 @@
         // exponent
         console.log(formatter(0.3256));
 
+        // binary
+        console.log(d3.format('b')(1974));
+
+        // precision
+        console.log(d3.format('.2e')(0.5678));
+        console.log(d3.format('.2f')(45.6974));
+
+        // Thousands separator
+        console.log(d3.format(',')(31231.23213));  // "31,231.23213"
+        console.log(d3.format(',.2f')(31231.23213));  // "31,231.23"
+
+        console.log(d3.format('09.2e')(31231.23213));   // "003.12e+4"
+        console.log(d3.format('09,.2f')(31231.23213));  // "31,231.23"
+
+        // currency signs
+        console.log(d3.format('#8b')(164));      // "0b10100100 "
+        console.log(d3.format('$.2e')(331.213)); // "$3.31e+2"
+
+        // signs
+        console.log(d3.format('+.2f')(331.213));  // "+331.21"
+        console.log(d3.format('+.2f')(-331.213)); // "-331.21"
+
+        // align
+        console.log(d3.format('<8.2f')(0.213));  // "0.21    "
+        console.log(d3.format('>8.2f')(0.213));  // "    0.21"
+        console.log(d3.format('^8.2f')(0.213));  // "  0.21  "
+
+        // fill option
+        console.log(d3.format('#<8.2f')(0.213));  // "0.21####"
+        console.log(d3.format('#>8.2f')(0.213));  // "####0.21"
+        console.log(d3.format('#^8.2f')(0.213));  // "##0.21##"
+
+        // date and time formats
+        var formatter2 = d3.time.format('%Y-%m-%d');
+
+        console.log(formatter2(new Date(2015, 10, 13))); // its m + 1 for some reason
+
     </script>
 </body>
 </html>
