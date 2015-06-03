@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AJS Data Oriented - Routes Example </title>
+
+    <!--styles-->
+
+    <!--scripts-->
+    <script src="../libs/jquery.min.js"></script>
+    <script src="../libs/angular.min.js"></script>
+    <script src="../libs/angular-route.min.js"></script>
+
+</head>
+<body ng-app="routeApp">
+
+    Choose:<br><br>
+    <a href="#employees">Employees</a><br>
+    <a href="#departments">Departments</a>
+
+    <div ng-view></div>
+
+    <!--App Files-->
+    <script src="app.js"></script>
+
+    <!--Controllers-->
+    <script src="employee.ctrl.js"></script>
+    <script src="department.ctrl.js"></script>
+
+</body>
+</html>
