@@ -15,13 +15,13 @@ server.route({
 });
 
 // get name route
-server.route({
-    method: 'GET',
-    path: '/{name}',
-    handler: function (request, reply) {
-        reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
-    }
-});
+// server.route({
+//     method: 'GET',
+//     path: '/{name}',
+//     handler: function (request, reply) {
+//         reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
+//     }
+// });
 
 // Register Good
 server.register({

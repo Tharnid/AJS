@@ -7,39 +7,52 @@ var db = new Sqlite3.Database('./dindin.sqlite');
 var server = new Hapi.Server();
 server.connection({ port: 1974 });
 
-server.route([{
-	method: 'GET',
-	path: '/api/recipes',
-	handler: function(request, reply) {
-		db.all('SELECT * FROM recipes', function(err, results) {
-			if (err) {
-				throw err;
-			}
-			
-			reply(results);
-		});
-	}
-}]);
-// oops
+// db bind
+server.bind({ db: db });
 
-// Register Good
-server.register({
-    register: Good,
-    options: {
-        reporters: [{
-            reporter: require('good-console'),
-            events: {
-                response: '*',
-                log: '*'
-            }
-        }]
-    }
-}, function (err) {
+// auth token bearer
+var validateFunc = function(token, callback) {
+    
+};
+
+var validateFunc = function (token, callback) {
+
+    db.get('SELECT * FROM users WHERE token = ?', [token], function (err, result) {
+
+        if (err) {
+            return callback(err, false);
+        }
+
+        var user = result;
+
+        if (!user) {
+            return callback(null, false);
+        }
+
+        callback(null, true, {
+            id: user.id,
+            username: user.username
+        });
+
+    });
+};
+
+server.register(require('hapi-auth-bearer-token'), function (err) {
+
     if (err) {
-        throw err; // something bad happened loading the plugin
+        throw err;
     }
+
+    server.auth.strategy('api', 'bearer-access-token', {
+        validateFunc: validateFunc
+    });
+
+    server.route(require('./routes'));
 
     server.start(function () {
-        server.log('info', 'Server running at: ' + server.info.uri);
+
+        console.log('Server listening at:', server.info.uri);
     });
 });
+
+
